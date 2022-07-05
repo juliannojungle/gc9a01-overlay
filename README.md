@@ -1,4 +1,4 @@
-# GC9A01 fbtft overlay
+# GC9A01 FBTFT overlay
 
 This is an overlay for the `fb_ili9340` graphics driver from [NoTro FBTFT](https://github.com/notro/fbtft/wiki/FBTFT-RPI-overlays), to use with LCD displays that has the [Galaxycore's GC9A01 single chip driver](GC9A01A.pdf). It allows to easily setup said displays to be used on newer Raspberry Pi OS releases that already includes `fbtft` on it's kernel.
 
