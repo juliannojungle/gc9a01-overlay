@@ -99,6 +99,8 @@ exit 0
 ```
 Reboot the Raspberry Pi and you'll start seeing the image from HDMI mirrored on the LCD.
 
+<br>
+
 # Extra setup (optional)
 
 ## Overlay parameters
