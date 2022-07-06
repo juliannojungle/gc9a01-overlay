@@ -1,8 +1,8 @@
 # GC9A01 FBTFT overlay
 
-This is an overlay for the `fb_ili9340` graphics driver from [NoTro FBTFT](https://github.com/notro/fbtft/wiki/FBTFT-RPI-overlays), to use with LCD displays that has the [Galaxycore's GC9A01 single chip driver](GC9A01A.pdf). It allows to easily setup said displays to be used on newer Raspberry Pi OS releases that already includes `fbtft` on it's kernel.
+This is an overlay for the `fb_ili9340` graphics driver from [NoTro FBTFT](https://github.com/notro/fbtft/wiki/FBTFT-RPI-overlays), to use with LCD displays that has the [Galaxycore's GC9A01 single chip driver](GC9A01A.pdf). It allows to easily setup (in just 3 super easy steps!) said displays to be used on newer Raspberry Pi OS releases that already includes `fbtft` on it's kernel.
 
-## Wiring
+## Step #1: Wiring!
 
 The display should be connected to the Raspberry Pi on the first SPI channel (`spi0`) [pins](https://pinout.xyz), as follows:
 
@@ -40,15 +40,13 @@ The display should be connected to the Raspberry Pi on the first SPI channel (`s
     </tbody>
 </table>
 
-## Installing
+## Step #2: Setup!
 
 1. Locate your sdcard boot partition. If you are on 'Windows', that should be the partition where the sdcard was mounted (e.g. `E:/`). On 'Raspberry Pi OS' that should be `/boot`;
 
-2. locate the `overlays` directory in boot partition (e.g. `E:/overlays` on 'Windows' or `/boot/overlays` on 'Raspberry Pi OS');
+2. Download the [gc9a01.dtbo](https://github.com/juliannojungle/gc9a01-overlay/releases/download/v1.0.0/gc9a01.dtbo) file to the `overlays` directory in boot partition (e.g. `E:/overlays` on 'Windows' or `/boot/overlays` on 'Raspberry Pi OS');
 
-3. Save the [gc9a01.dtbo](gc9a01.dtbo) file on the `overlays` directory;
-
-4. Edit the `config.txt` file on the boot partition and append the following line to the end of the file:
+3. Edit the `config.txt` file on the boot partition and append the following line to the end of the file:
 
 ```
 dtoverlay=gc9a01
@@ -65,12 +63,12 @@ ls /dev/fb*
 
 - this should list both `fb0` and `fb1`.
 
-## Mirroring HDMI on LCD
+## Step #3: Get some image!
 
-Since this overlay is just a device driver, it only enables the LCD device on the `fb1` framebuffer (it's like turning on the TV without any cable or antenna input). In order to actually see something on the display, you need something sending image to it.
-What users tipically do is just mirror the HDMI output (displayed on `fb0`) on the LCD (displayed on `fb1`). For this task there are many tools available and we'll help you to setup one of them bellow. Another way to show stuff on the display would be your application directly write on `fb1` framebuffer, but that won't be covered here.
+Since this overlay is just an extension of the device driver, it only attaches and initiates the LCD device on the `fb1` framebuffer (it's like turning on the TV without any cable or antenna input). In order to actually see something on the display, you need something sending image to it.
+What users tipically do is just mirror the HDMI output (displayed on `fb0`) on the LCD (displayed on `fb1`). For this task there are many tools available and we'll help you to setup one of them bellow. If you are a developer, another way to show stuff on the display would be your application directly write on `fb1` framebuffer, but that won't be covered here.
 
-## Rpi-fbcp
+### Mirroring HDMI on LCD: Rpi-fbcp
 
 [Raspberry Pi Framebuffer Copy](https://github.com/tasanakorn/rpi-fbcp) is a tool that copies the primary framebuffer (`fb0`) to a secondary one (`fb1`).
 
@@ -100,6 +98,8 @@ fbcp&
 exit 0
 ```
 Reboot the Raspberry Pi and you'll start seeing the image from HDMI mirrored on the LCD.
+
+# Extra setup (optional)
 
 ## Overlay parameters
 
