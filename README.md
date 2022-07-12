@@ -1,5 +1,9 @@
 # GC9A01 FBTFT overlay
 
+The `gc9a01-overlay.dts` [was commited](https://github.com/raspberrypi/linux/commit/efaad621ac01729c9656c47ce009ddb8e7698e16) on the official [Raspberry Pi Linux kernel](https://github.com/raspberrypi/linux). Development on this repository has ceased and any issue or new feature should be handled [there](https://github.com/raspberrypi/linux/blob/rpi-5.15.y/arch/arm/boot/dts/overlays/gc9a01-overlay.dts).
+
+---
+
 This is an overlay for the `fb_ili9340` graphics driver from [NoTro FBTFT](https://github.com/notro/fbtft/wiki/FBTFT-RPI-overlays), to use with LCD displays that has the [Galaxycore's GC9A01 single chip driver](GC9A01A.pdf). It allows to easily setup (in just 3 super easy steps!) said displays to be used on newer Raspberry Pi OS releases that already includes `fbtft` on it's kernel.
 
 ## Step #1: Wiring!
