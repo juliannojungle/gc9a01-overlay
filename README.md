@@ -48,7 +48,7 @@ The display should be connected to the Raspberry Pi on the first SPI channel (`s
 
 1. Locate your sdcard boot partition. If you are on 'Windows', that should be the partition where the sdcard was mounted (e.g. `E:/`). On 'Raspberry Pi OS' that should be `/boot`;
 
-2. Download the [gc9a01.dtbo](https://github.com/juliannojungle/gc9a01-overlay/releases/download/v1.0.0/gc9a01.dtbo) file to the `overlays` directory in boot partition (e.g. `E:/overlays` on 'Windows' or `/boot/overlays` on 'Raspberry Pi OS');
+2. Check the `overlays` directory in boot partition (e.g. `E:/overlays` on 'Windows' or `/boot/overlays` on 'Raspberry Pi OS') and look for the `gc9a01.dtbo` overlay file. If you're missing the file, you can download it from [here](https://github.com/raspberrypi/firmware/raw/master/boot/overlays/gc9a01.dtbo) (official Raspberry Pi Firmware repository) and save it to the said directory;
 
 3. Edit the `config.txt` file on the boot partition and append the following line to the end of the file:
 
