@@ -1,4 +1,4 @@
-<img src="gc9a01.png" width="50%" height="50%">
+<img src="images/gc9a01.png" width="50%" height="50%">
 
 # GC9A01 FBTFT overlay
 
@@ -6,7 +6,7 @@ The `gc9a01-overlay.dts` [was commited](https://github.com/raspberrypi/linux/com
 
 ---
 
-This is an overlay for the `fb_ili9340` graphics driver from [NoTro FBTFT](https://github.com/notro/fbtft/wiki/FBTFT-RPI-overlays), to use with LCD displays that has the [Galaxycore's GC9A01 single chip driver](GC9A01A.pdf). It allows to easily setup (in just 3 super easy steps!) said displays to be used on newer Raspberry Pi OS releases that already includes `fbtft` on it's kernel.
+This is an overlay for the `fb_ili9340` graphics driver from [NoTro FBTFT](https://github.com/notro/fbtft/wiki/FBTFT-RPI-overlays), to use with LCD displays that has the [Galaxycore's GC9A01 single chip driver](documents/GC9A01A.pdf). It allows to easily setup (in just 3 super easy steps!) said displays to be used on newer Raspberry Pi OS releases that already includes `fbtft` on it's kernel.
 
 ## Step #1: Wiring! :electric_plug:
 
@@ -104,6 +104,8 @@ fbcp&
 exit 0
 ```
 Reboot the Raspberry Pi and you'll start seeing the image from HDMI mirrored on the LCD.
+
+<img src="images/gc9a01-desktop.jpg" width="100%" height="100%">
 
 <br>
 
