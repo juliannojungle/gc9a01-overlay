@@ -1,3 +1,5 @@
+<img src="gc9a01.png" width="50%" height="50%">
+
 # GC9A01 FBTFT overlay
 
 The `gc9a01-overlay.dts` [was commited](https://github.com/raspberrypi/linux/commit/efaad621ac01729c9656c47ce009ddb8e7698e16) on the official [Raspberry Pi Linux kernel](https://github.com/raspberrypi/linux). Development on this repository has ceased and any issue or new feature should be handled [there](https://github.com/raspberrypi/linux/blob/rpi-5.15.y/arch/arm/boot/dts/overlays/gc9a01-overlay.dts).
@@ -6,7 +8,7 @@ The `gc9a01-overlay.dts` [was commited](https://github.com/raspberrypi/linux/com
 
 This is an overlay for the `fb_ili9340` graphics driver from [NoTro FBTFT](https://github.com/notro/fbtft/wiki/FBTFT-RPI-overlays), to use with LCD displays that has the [Galaxycore's GC9A01 single chip driver](GC9A01A.pdf). It allows to easily setup (in just 3 super easy steps!) said displays to be used on newer Raspberry Pi OS releases that already includes `fbtft` on it's kernel.
 
-## Step #1: Wiring!
+## Step #1: Wiring! :electric_plug:
 
 The display should be connected to the Raspberry Pi on the first SPI channel (`spi0`) [pins](https://pinout.xyz), as follows:
 
@@ -44,7 +46,7 @@ The display should be connected to the Raspberry Pi on the first SPI channel (`s
     </tbody>
 </table>
 
-## Step #2: Setup!
+## Step #2: Setup! :hammer_and_wrench:
 
 1. Locate your sdcard boot partition. If you are on 'Windows', that should be the partition where the sdcard was mounted (e.g. `E:/`). On 'Raspberry Pi OS' that should be `/boot`;
 
@@ -67,7 +69,7 @@ ls /dev/fb*
 
 - this should list both `fb0` and `fb1`.
 
-## Step #3: Get some image!
+## Step #3: Get some image! :tv:
 
 Since this overlay is just an extension of the device driver, it only attaches and initiates the LCD device on the `fb1` framebuffer (it's like turning on the TV without any cable or antenna input). In order to actually see something on the display, you need something sending image to it.
 What users tipically do is just mirror the HDMI output (displayed on `fb0`) on the LCD (displayed on `fb1`). For this task there are many tools available and we'll help you to setup one of them bellow. If you are a developer, another way to show stuff on the display would be your application directly write on `fb1` framebuffer, but that won't be covered here.
@@ -105,7 +107,7 @@ Reboot the Raspberry Pi and you'll start seeing the image from HDMI mirrored on 
 
 <br>
 
-# Extra setup (optional)
+# Extra setup (optional) :repeat:
 
 ## Overlay parameters
 
@@ -161,7 +163,7 @@ This setting is a bitmask. So you can both flip and rotate the display at the sa
 
 <br>
 
-# Development
+# Development :space_invader:
 
 ## Building and testing
 
